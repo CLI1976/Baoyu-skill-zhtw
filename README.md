@@ -3,6 +3,7 @@
 [English](./README.en.md) | 中文
 
 寶玉分享的 Claude Code 技能集，提升日常工作效率。
+原路徑 JimLiu/baoyu-skills
 
 ## 前置要求
 
@@ -14,7 +15,7 @@
 ### 快速安裝（推薦）
 
 ```bash
-npx skills add jimliu/baoyu-skills
+npx skills add CLI1976/Baoyu-skill-zhtw
 ```
 
 ### 註冊外掛市場
@@ -22,7 +23,7 @@ npx skills add jimliu/baoyu-skills
 在 Claude Code 中執行：
 
 ```bash
-/plugin marketplace add jimliu/baoyu-skills
+/plugin marketplace add CLI1976/Baoyu-skill-zhtw
 ```
 
 ### 安裝技能
