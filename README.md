@@ -1,107 +1,107 @@
 # baoyu-skills
 
-English | [中文](./README.zh.md)
+[English](./README.en.md) | 中文
 
-Skills shared by Baoyu for improving daily work efficiency with Claude Code.
+寶玉分享的 Claude Code 技能集，提升日常工作效率。
 
-## Prerequisites
+## 前置要求
 
-- Node.js environment installed
-- Ability to run `npx bun` commands
+- 已安裝 Node.js 環境
+- 能夠執行 `npx bun` 命令
 
-## Installation
+## 安裝
 
-### Quick Install (Recommended)
+### 快速安裝（推薦）
 
 ```bash
 npx skills add jimliu/baoyu-skills
 ```
 
-### Register as Plugin Marketplace
+### 註冊外掛市場
 
-Run the following command in Claude Code:
+在 Claude Code 中執行：
 
 ```bash
 /plugin marketplace add jimliu/baoyu-skills
 ```
 
-### Install Skills
+### 安裝技能
 
-**Option 1: Via Browse UI**
+**方式一：透過瀏覽介面**
 
-1. Select **Browse and install plugins**
-2. Select **baoyu-skills**
-3. Select the plugin(s) you want to install
-4. Select **Install now**
+1. 選擇 **Browse and install plugins**
+2. 選擇 **baoyu-skills**
+3. 選擇要安裝的外掛
+4. 選擇 **Install now**
 
-**Option 2: Direct Install**
+**方式二：直接安裝**
 
 ```bash
-# Install specific plugin
+# 安裝指定外掛
 /plugin install content-skills@baoyu-skills
 /plugin install ai-generation-skills@baoyu-skills
 /plugin install utility-skills@baoyu-skills
 ```
 
-**Option 3: Ask the Agent**
+**方式三：告訴 Agent**
 
-Simply tell Claude Code:
+直接告訴 Claude Code：
 
-> Please install Skills from github.com/JimLiu/baoyu-skills
+> 請幫我安裝 github.com/JimLiu/baoyu-skills 中的 Skills
 
-### Available Plugins
+### 可用外掛
 
-| Plugin | Description | Skills |
-|--------|-------------|--------|
-| **content-skills** | Content generation and publishing | [xhs-images](#baoyu-xhs-images), [infographic](#baoyu-infographic), [cover-image](#baoyu-cover-image), [slide-deck](#baoyu-slide-deck), [comic](#baoyu-comic), [article-illustrator](#baoyu-article-illustrator), [post-to-x](#baoyu-post-to-x), [post-to-wechat](#baoyu-post-to-wechat) |
-| **ai-generation-skills** | AI-powered generation backends | [image-gen](#baoyu-image-gen), [danger-gemini-web](#baoyu-danger-gemini-web) |
-| **utility-skills** | Utility tools for content processing | [url-to-markdown](#baoyu-url-to-markdown), [danger-x-to-markdown](#baoyu-danger-x-to-markdown), [compress-image](#baoyu-compress-image) |
+| 外掛 | 說明 | 包含技能 |
+|------|------|----------|
+| **content-skills** | 內容生成和釋出 | [xhs-images](#baoyu-xhs-images), [infographic](#baoyu-infographic), [cover-image](#baoyu-cover-image), [slide-deck](#baoyu-slide-deck), [comic](#baoyu-comic), [article-illustrator](#baoyu-article-illustrator), [post-to-x](#baoyu-post-to-x), [post-to-wechat](#baoyu-post-to-wechat) |
+| **ai-generation-skills** | AI 生成後端 | [image-gen](#baoyu-image-gen), [danger-gemini-web](#baoyu-danger-gemini-web) |
+| **utility-skills** | 內容處理工具 | [url-to-markdown](#baoyu-url-to-markdown), [danger-x-to-markdown](#baoyu-danger-x-to-markdown), [compress-image](#baoyu-compress-image) |
 
-## Update Skills
+## 更新技能
 
-To update skills to the latest version:
+更新技能到最新版本：
 
-1. Run `/plugin` in Claude Code
-2. Switch to **Marketplaces** tab (use arrow keys or Tab)
-3. Select **baoyu-skills**
-4. Choose **Update marketplace**
+1. 在 Claude Code 中執行 `/plugin`
+2. 切換到 **Marketplaces** 標籤頁（使用方向鍵或 Tab）
+3. 選擇 **baoyu-skills**
+4. 選擇 **Update marketplace**
 
-You can also **Enable auto-update** to get the latest versions automatically.
+也可以選擇 **Enable auto-update** 啟用自動更新，每次啟動時自動獲取最新版本。
 
-![Update Skills](./screenshots/update-plugins.png)
+![更新技能](./screenshots/update-plugins.png)
 
-## Available Skills
+## 可用技能
 
-Skills are organized into three categories:
+技能分為三大類：
 
-### Content Skills
+### 內容技能 (Content Skills)
 
-Content generation and publishing skills.
+內容生成和釋出技能。
 
 #### baoyu-xhs-images
 
-Xiaohongshu (RedNote) infographic series generator. Breaks down content into 1-10 cartoon-style infographics with **Style × Layout** two-dimensional system.
+小紅書資訊圖系列生成器。將內容拆解為 1-10 張卡通風格資訊圖，支援 **風格 × 佈局** 二維繫統。
 
 ```bash
-# Auto-select style and layout
+# 自動選擇風格和佈局
 /baoyu-xhs-images posts/ai-future/article.md
 
-# Specify style
+# 指定風格
 /baoyu-xhs-images posts/ai-future/article.md --style notion
 
-# Specify layout
+# 指定佈局
 /baoyu-xhs-images posts/ai-future/article.md --layout dense
 
-# Combine style and layout
+# 組合風格和佈局
 /baoyu-xhs-images posts/ai-future/article.md --style tech --layout list
 
-# Direct content input
+# 直接輸入內容
 /baoyu-xhs-images 今日星座運勢
 ```
 
-**Styles** (visual aesthetics): `cute` (default), `fresh`, `warm`, `bold`, `minimal`, `retro`, `pop`, `notion`, `chalkboard`
+**風格**（視覺美學）：`cute`（預設）、`fresh`、`warm`、`bold`、`minimal`、`retro`、`pop`、`notion`、`chalkboard`
 
-**Style Previews**:
+**風格預覽**：
 
 | | | |
 |:---:|:---:|:---:|
@@ -112,17 +112,17 @@ Xiaohongshu (RedNote) infographic series generator. Breaks down content into 1-1
 | ![pop](./screenshots/xhs-images-styles/pop.webp) | ![notion](./screenshots/xhs-images-styles/notion.webp) | ![chalkboard](./screenshots/xhs-images-styles/chalkboard.webp) |
 | pop | notion | chalkboard |
 
-**Layouts** (information density):
-| Layout | Density | Best for |
-|--------|---------|----------|
-| `sparse` | 1-2 pts | Covers, quotes |
-| `balanced` | 3-4 pts | Regular content |
-| `dense` | 5-8 pts | Knowledge cards, cheat sheets |
-| `list` | 4-7 items | Checklists, rankings |
-| `comparison` | 2 sides | Before/after, pros/cons |
-| `flow` | 3-6 steps | Processes, timelines |
+**佈局**（資訊密度）：
+| 佈局 | 密度 | 適用場景 |
+|------|------|----------|
+| `sparse` | 1-2 點 | 封面、金句 |
+| `balanced` | 3-4 點 | 常規內容 |
+| `dense` | 5-8 點 | 知識卡片、乾貨總結 |
+| `list` | 4-7 項 | 清單、排行 |
+| `comparison` | 雙欄 | 對比、優劣 |
+| `flow` | 3-6 步 | 流程、時間線 |
 
-**Layout Previews**:
+**佈局預覽**：
 
 | | | |
 |:---:|:---:|:---:|
@@ -133,59 +133,59 @@ Xiaohongshu (RedNote) infographic series generator. Breaks down content into 1-1
 
 #### baoyu-infographic
 
-Generate professional infographics with 20 layout types and 17 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics.
+專業資訊圖生成器，支援 20 種佈局和 17 種視覺風格。分析內容後推薦佈局×風格組合，生成可釋出的資訊圖。
 
 ```bash
-# Auto-recommend combinations based on content
+# 根據內容自動推薦組合
 /baoyu-infographic path/to/content.md
 
-# Specify layout
+# 指定佈局
 /baoyu-infographic path/to/content.md --layout pyramid
 
-# Specify style (default: craft-handmade)
+# 指定風格（預設：craft-handmade）
 /baoyu-infographic path/to/content.md --style technical-schematic
 
-# Specify both
+# 同時指定佈局和風格
 /baoyu-infographic path/to/content.md --layout funnel --style corporate-memphis
 
-# With aspect ratio
+# 指定比例
 /baoyu-infographic path/to/content.md --aspect portrait
 ```
 
-**Options**:
-| Option | Description |
-|--------|-------------|
-| `--layout <name>` | Information layout (20 options) |
-| `--style <name>` | Visual style (17 options, default: craft-handmade) |
-| `--aspect <ratio>` | landscape (16:9), portrait (9:16), square (1:1) |
-| `--lang <code>` | Output language (en, zh-tw, ja, etc.) |
+**選項**：
+| 選項 | 說明 |
+|------|------|
+| `--layout <name>` | 資訊佈局（20 種選項） |
+| `--style <name>` | 視覺風格（17 種選項，預設：craft-handmade） |
+| `--aspect <ratio>` | landscape (16:9)、portrait (9:16)、square (1:1) |
+| `--lang <code>` | 輸出語言（en、zh、ja 等） |
 
-**Layouts** (information structure):
+**佈局**（資訊結構）：
 
-| Layout | Best For |
-|--------|----------|
-| `bridge` | Problem-solution, gap-crossing |
-| `circular-flow` | Cycles, recurring processes |
-| `comparison-table` | Multi-factor comparisons |
-| `do-dont` | Correct vs incorrect practices |
-| `equation` | Formula breakdown, input-output |
-| `feature-list` | Product features, bullet points |
-| `fishbone` | Root cause analysis |
-| `funnel` | Conversion processes, filtering |
-| `grid-cards` | Multiple topics, overview |
-| `iceberg` | Surface vs hidden aspects |
-| `journey-path` | Customer journey, milestones |
-| `layers-stack` | Technology stack, layers |
-| `mind-map` | Brainstorming, idea mapping |
-| `nested-circles` | Levels of influence, scope |
-| `priority-quadrants` | Eisenhower matrix, 2x2 |
-| `pyramid` | Hierarchy, Maslow's needs |
-| `scale-balance` | Pros vs cons, weighing |
-| `timeline-horizontal` | History, chronological events |
-| `tree-hierarchy` | Org charts, taxonomy |
-| `venn` | Overlapping concepts |
+| 佈局 | 適用場景 |
+|------|----------|
+| `bridge` | 問題→解決方案、跨越鴻溝 |
+| `circular-flow` | 迴圈、週期性流程 |
+| `comparison-table` | 多因素對比 |
+| `do-dont` | 正確 vs 錯誤做法 |
+| `equation` | 公式分解、輸入→輸出 |
+| `feature-list` | 產品功能、要點列表 |
+| `fishbone` | 根因分析、魚骨圖 |
+| `funnel` | 轉化漏斗、篩選過程 |
+| `grid-cards` | 多主題概覽、卡片網格 |
+| `iceberg` | 表面 vs 隱藏層面 |
+| `journey-path` | 使用者旅程、里程碑 |
+| `layers-stack` | 技術棧、分層結構 |
+| `mind-map` | 頭腦風暴、思維導圖 |
+| `nested-circles` | 影響層級、範圍圈 |
+| `priority-quadrants` | 四象限矩陣、優先順序 |
+| `pyramid` | 層級金字塔、馬斯洛需求 |
+| `scale-balance` | 利弊權衡、天平對比 |
+| `timeline-horizontal` | 歷史、時間線事件 |
+| `tree-hierarchy` | 組織架構、分類樹 |
+| `venn` | 重疊概念、韋恩圖 |
 
-**Layout Previews**:
+**佈局預覽**：
 
 | | | |
 |:---:|:---:|:---:|
@@ -204,29 +204,29 @@ Generate professional infographics with 20 layout types and 17 visual styles. An
 | ![tree-hierarchy](./screenshots/infographic-layouts/tree-hierarchy.webp) | ![venn](./screenshots/infographic-layouts/venn.webp) | |
 | tree-hierarchy | venn | |
 
-**Styles** (visual aesthetics):
+**風格**（視覺美學）：
 
-| Style | Description |
-|-------|-------------|
-| `craft-handmade` (Default) | Hand-drawn illustration, paper craft aesthetic |
-| `claymation` | 3D clay figures, playful stop-motion |
-| `kawaii` | Japanese cute, big eyes, pastel colors |
-| `storybook-watercolor` | Soft painted illustrations, whimsical |
-| `chalkboard` | Colorful chalk on black board |
-| `cyberpunk-neon` | Neon glow on dark, futuristic |
-| `bold-graphic` | Comic style, halftone dots, high contrast |
-| `aged-academia` | Vintage science, sepia sketches |
-| `corporate-memphis` | Flat vector people, vibrant fills |
-| `technical-schematic` | Blueprint, isometric 3D, engineering |
-| `origami` | Folded paper forms, geometric |
-| `pixel-art` | Retro 8-bit, nostalgic gaming |
-| `ui-wireframe` | Grayscale boxes, interface mockup |
-| `subway-map` | Transit diagram, colored lines |
-| `ikea-manual` | Minimal line art, assembly style |
-| `knolling` | Organized flat-lay, top-down |
-| `lego-brick` | Toy brick construction, playful |
+| 風格 | 描述 |
+|------|------|
+| `craft-handmade`（預設） | 手繪插畫、紙藝風格 |
+| `claymation` | 3D 黏土人物、定格動畫感 |
+| `kawaii` | 日系可愛、大眼睛、粉彩色 |
+| `storybook-watercolor` | 柔和水彩、童話繪本 |
+| `chalkboard` | 彩色粉筆、黑板風格 |
+| `cyberpunk-neon` | 霓虹燈光、暗色未來感 |
+| `bold-graphic` | 漫畫風格、網點、高對比 |
+| `aged-academia` | 復古科學、泛黃素描 |
+| `corporate-memphis` | 扁平向量人物、鮮豔填充 |
+| `technical-schematic` | 藍圖、等距 3D、工程圖 |
+| `origami` | 摺紙形態、幾何感 |
+| `pixel-art` | 復古 8-bit、懷舊遊戲 |
+| `ui-wireframe` | 灰度框圖、介面原型 |
+| `subway-map` | 地鐵圖、彩色線路 |
+| `ikea-manual` | 極簡線條、組裝說明風 |
+| `knolling` | 整齊平鋪、俯檢視 |
+| `lego-brick` | 樂高積木、童趣拼搭 |
 
-**Style Previews**:
+**風格預覽**：
 
 | | | |
 |:---:|:---:|:---:|
@@ -245,23 +245,23 @@ Generate professional infographics with 20 layout types and 17 visual styles. An
 
 #### baoyu-cover-image
 
-Generate hand-drawn style cover images for articles with multiple style options.
+為文章生成手繪風格封面圖，支援多種風格選項。
 
 ```bash
-# From markdown file (auto-select style)
+# 從 markdown 檔案生成（自動選擇風格）
 /baoyu-cover-image path/to/article.md
 
-# Specify a style
+# 指定風格
 /baoyu-cover-image path/to/article.md --style tech
 /baoyu-cover-image path/to/article.md --style warm
 
-# Without title text
+# 不包含標題文字
 /baoyu-cover-image path/to/article.md --no-title
 ```
 
-Available styles: `elegant` (default), `blueprint`, `bold-editorial`, `chalkboard`, `dark-atmospheric`, `editorial-infographic`, `fantasy-animation`, `flat-doodle`, `intuition-machine`, `minimal`, `nature`, `notion`, `pixel-art`, `playful`, `retro`, `sketch-notes`, `vector-illustration`, `vintage`, `warm`, `watercolor`
+可用風格：`elegant`（預設）、`blueprint`、`bold-editorial`、`chalkboard`、`dark-atmospheric`、`editorial-infographic`、`fantasy-animation`、`flat-doodle`、`intuition-machine`、`minimal`、`nature`、`notion`、`pixel-art`、`playful`、`retro`、`sketch-notes`、`vector-illustration`、`vintage`、`warm`、`watercolor`
 
-**Style Previews**:
+**風格預覽**：
 
 | | | |
 |:---:|:---:|:---:|
@@ -282,44 +282,44 @@ Available styles: `elegant` (default), `blueprint`, `bold-editorial`, `chalkboar
 
 #### baoyu-slide-deck
 
-Generate professional slide deck images from content. Creates comprehensive outlines with style instructions, then generates individual slide images.
+從內容生成專業的幻燈片圖片。先建立包含樣式說明的完整大綱，然後逐頁生成幻燈片圖片。
 
 ```bash
-# From markdown file
+# 從 markdown 檔案生成
 /baoyu-slide-deck path/to/article.md
 
-# With style and audience
+# 指定風格和受眾
 /baoyu-slide-deck path/to/article.md --style corporate
 /baoyu-slide-deck path/to/article.md --audience executives
 
-# Outline only (no image generation)
+# 僅生成大綱（不生成圖片）
 /baoyu-slide-deck path/to/article.md --outline-only
 
-# With language
+# 指定語言
 /baoyu-slide-deck path/to/article.md --lang zh
 ```
 
-**Styles** (visual aesthetics):
+**風格**（視覺美學）：
 
-| Style | Description | Best For |
-|-------|-------------|----------|
-| `blueprint` (default) | Technical schematics, grid texture, engineering precision | Architecture, system design |
-| `notion` | SaaS dashboard aesthetic, card-based layouts, clean data focus | Product demos, SaaS, B2B |
-| `bold-editorial` | High-impact magazine style, bold typography, dark backgrounds | Product launches, keynotes |
-| `corporate` | Navy/gold palette, structured layouts, professional icons | Investor decks, proposals |
-| `dark-atmospheric` | Cinematic dark mode, glowing accents, atmospheric depth | Entertainment, gaming, creative |
-| `editorial-infographic` | Magazine-style explainers, flat illustrations | Tech explainers, research |
-| `fantasy-animation` | Whimsical Ghibli/Disney style, hand-drawn animation | Educational, storytelling |
-| `intuition-machine` | Technical briefing, bilingual labels, aged paper texture | Technical docs, bilingual |
-| `minimal` | Ultra-clean, maximum whitespace, single accent color | Executive briefings, premium |
-| `pixel-art` | Retro 8-bit aesthetic, chunky pixels, nostalgic gaming | Gaming, developer talks |
-| `scientific` | Academic diagrams, biological pathways, precise labeling | Biology, chemistry, medical |
-| `sketch-notes` | Hand-drawn feel, soft brush strokes, warm background | Educational, tutorials |
-| `vector-illustration` | Flat vector, black outlines, retro soft colors | Creative proposals, explainers |
-| `vintage` | Aged-paper aesthetic, historical document styling | Historical, heritage, biography |
-| `watercolor` | Soft hand-painted textures, natural warmth | Lifestyle, wellness, travel |
+| 風格 | 描述 | 適用場景 |
+|------|------|----------|
+| `blueprint`（預設） | 技術藍圖風格，網格紋理，工程精度 | 架構設計、系統設計 |
+| `notion` | SaaS 儀表盤美學，卡片式佈局，資料清晰 | 產品演示、SaaS、B2B |
+| `bold-editorial` | 雜誌社論風格，粗體排版，深色背景 | 產品釋出、主題演講 |
+| `corporate` | 海軍藍/金色配色，結構化佈局，專業圖示 | 投資者演示、客戶提案 |
+| `dark-atmospheric` | 電影級暗色調，發光效果，氛圍感 | 娛樂、遊戲、創意 |
+| `editorial-infographic` | 雜誌風格資訊圖，扁平插畫 | 科技解說、研究報告 |
+| `fantasy-animation` | 吉卜力/迪士尼風格，手繪動畫 | 教育、故事講述 |
+| `intuition-machine` | 技術簡報，雙語標籤，做舊紙張紋理 | 技術文件、雙語內容 |
+| `minimal` | 極簡風格，大量留白，單一強調色 | 高管簡報、高階品牌 |
+| `pixel-art` | 復古 8-bit 畫素風，懷舊遊戲感 | 遊戲、開發者分享 |
+| `scientific` | 學術圖表，生物通路，精確標註 | 生物、化學、醫學 |
+| `sketch-notes` | 手繪風格，柔和筆觸，暖白色背景 | 教育、教程、知識分享 |
+| `vector-illustration` | 扁平向量風格，黑色輪廓線，復古柔和配色 | 創意提案、說明性內容 |
+| `vintage` | 做舊紙張美學，歷史文件風格 | 歷史、傳記、人文 |
+| `watercolor` | 柔和手繪水彩紋理，自然溫暖 | 生活方式、健康、旅行 |
 
-**Style Previews**:
+**風格預覽**：
 
 | | | |
 |:---:|:---:|:---:|
@@ -336,57 +336,57 @@ Generate professional slide deck images from content. Creates comprehensive outl
 | ![watercolor](./screenshots/slide-deck-styles/watercolor.webp) | | |
 | watercolor | | |
 
-After generation, slides are automatically merged into a `.pptx` file for easy sharing.
+生成完成後，所有幻燈片會自動合併為 `.pptx` 檔案，方便分享。
 
 #### baoyu-comic
 
-Knowledge comic creator supporting multiple styles (Logicomix/Ligne Claire, Ohmsha manga guide). Creates original educational comics with detailed panel layouts and sequential image generation.
+知識漫畫創作器，支援多種風格（Logicomix/清線風格、歐姆社漫畫教程風格）。創作帶有詳細分鏡佈局的原創教育漫畫，逐頁生成圖片。
 
 ```bash
-# From source material
+# 從素材檔案生成
 /baoyu-comic posts/turing-story/source.md
 
-# Specify style
+# 指定風格
 /baoyu-comic posts/turing-story/source.md --style dramatic
 /baoyu-comic posts/turing-story/source.md --style ohmsha
 
-# Custom style (natural language)
-/baoyu-comic posts/turing-story/source.md --style "watercolor with soft edges"
+# 自定義風格（自然語言描述）
+/baoyu-comic posts/turing-story/source.md --style "水彩風格，邊緣柔和"
 
-# Specify layout and aspect ratio
+# 指定佈局和比例
 /baoyu-comic posts/turing-story/source.md --layout cinematic
 /baoyu-comic posts/turing-story/source.md --aspect 16:9
 
-# Specify language
+# 指定語言
 /baoyu-comic posts/turing-story/source.md --lang zh
 
-# Direct content input
-/baoyu-comic "The story of Alan Turing and the birth of computer science"
+# 直接輸入內容
+/baoyu-comic "圖靈的故事與電腦科學的誕生"
 ```
 
-**Options**:
-| Option | Values |
-|--------|--------|
-| `--style` | `classic` (default), `dramatic`, `warm`, `sepia`, `vibrant`, `ohmsha`, `realistic`, `wuxia`, `shoujo`, or custom description |
-| `--layout` | `standard` (default), `cinematic`, `dense`, `splash`, `mixed`, `webtoon` |
-| `--aspect` | `3:4` (default, portrait), `4:3` (landscape), `16:9` (widescreen) |
-| `--lang` | `auto` (default), `zh`, `en`, `ja`, etc. |
+**選項**：
+| 選項 | 取值 |
+|------|------|
+| `--style` | `classic`（預設）、`dramatic`、`warm`、`sepia`、`vibrant`、`ohmsha`、`realistic`、`wuxia`、`shoujo`，或自然語言描述 |
+| `--layout` | `standard`（預設）、`cinematic`、`dense`、`splash`、`mixed`、`webtoon` |
+| `--aspect` | `3:4`（預設，豎版）、`4:3`（橫版）、`16:9`（寬屏） |
+| `--lang` | `auto`（預設）、`zh`、`en`、`ja` 等 |
 
-**Styles** (visual aesthetics):
+**風格**（視覺美學）：
 
-| Style | Description | Best For |
-|-------|-------------|----------|
-| `classic` (default) | Traditional Ligne Claire with clean uniform outlines, flat colors, detailed backgrounds | Biographies, balanced narratives, educational content |
-| `dramatic` | High contrast with heavy shadows, intense expressions, angular compositions | Pivotal discoveries, conflicts, climactic scenes |
-| `warm` | Soft edges, golden tones, cozy interiors with nostalgic feel | Personal stories, childhood scenes, mentorship |
-| `sepia` | Vintage illustration style with aged paper effect, period-accurate details | Pre-1950s stories, classical science, historical figures |
-| `vibrant` | Energetic lines with weight variation, bright colors, dynamic poses | Science explanations, "aha" moments, young audience |
-| `ohmsha` | Manga guide style with visual metaphors, gadgets, student/mentor dynamic | Technical tutorials, complex concepts (ML, physics) |
-| `realistic` | Full-color realistic manga with digital painting, smooth gradients, accurate proportions | Wine, food, business, lifestyle, professional topics |
-| `wuxia` | Hong Kong martial arts style with ink brush strokes, dynamic combat, qi effects | Martial arts, wuxia/xianxia, Chinese historical fiction |
-| `shoujo` | Classic shoujo manga with large sparkling eyes, flowers, sparkles, soft pink/lavender palette | Romance, coming-of-age, friendship, emotional drama |
+| 風格 | 描述 | 適用場景 |
+|------|------|----------|
+| `classic`（預設） | 傳統清線風格，統一線條、平塗色彩、精細背景 | 傳記、平衡敘事、教育內容 |
+| `dramatic` | 高對比度，重陰影、緊張表情、稜角分明的構圖 | 重大發現、衝突、高潮場景 |
+| `warm` | 柔和邊緣、金色調、溫馨室內、懷舊感 | 個人故事、童年場景、師生情 |
+| `sepia` | 復古插畫風格、做舊紙張效果、時代準確細節 | 1950 年前故事、古典科學、歷史人物 |
+| `vibrant` | 富有活力的線條、明亮色彩、動感姿態 | 科學解說、"頓悟"時刻、青少年讀者 |
+| `ohmsha` | 歐姆社漫畫風格，視覺比喻、道具、學生/導師互動 | 技術教程、複雜概念（機器學習、物理） |
+| `realistic` | 全綵寫實日漫風格，數字繪畫、平滑漸變、準確人體比例 | 紅酒、美食、商業、生活方式、專業話題 |
+| `wuxia` | 港漫武俠風格，水墨筆觸、動態打鬥、氣功特效 | 武俠、仙俠、中國歷史小說 |
+| `shoujo` | 經典少女漫畫風格，大眼睛閃亮高光、花朵星星裝飾、粉紫色調 | 戀愛、青春成長、友情、情感故事 |
 
-**Style Previews**:
+**風格預覽**：
 
 | | | |
 |:---:|:---:|:---:|
@@ -397,17 +397,17 @@ Knowledge comic creator supporting multiple styles (Logicomix/Ligne Claire, Ohms
 | ![realistic](./screenshots/comic-styles/realistic.webp) | ![wuxia](./screenshots/comic-styles/wuxia.webp) | ![shoujo](./screenshots/comic-styles/shoujo.webp) |
 | realistic | wuxia | shoujo |
 
-**Layouts** (panel arrangement):
-| Layout | Panels/Page | Best for |
-|--------|-------------|----------|
-| `standard` | 4-6 | Dialogue, narrative flow |
-| `cinematic` | 2-4 | Dramatic moments, establishing shots |
-| `dense` | 6-9 | Technical explanations, timelines |
-| `splash` | 1-2 large | Key moments, revelations |
-| `mixed` | 3-7 varies | Complex narratives, emotional arcs |
-| `webtoon` | 3-5 vertical | Ohmsha tutorials, mobile reading |
+**佈局**（分鏡排列）：
+| 佈局 | 每頁分鏡數 | 適用場景 |
+|------|-----------|----------|
+| `standard` | 4-6 | 對話、敘事推進 |
+| `cinematic` | 2-4 | 戲劇性時刻、建立鏡頭 |
+| `dense` | 6-9 | 技術說明、時間線 |
+| `splash` | 1-2 大圖 | 關鍵時刻、揭示 |
+| `mixed` | 3-7 不等 | 複雜敘事、情感弧線 |
+| `webtoon` | 3-5 豎向 | 歐姆社教程、手機閱讀 |
 
-**Layout Previews**:
+**佈局預覽**：
 
 | | | |
 |:---:|:---:|:---:|
@@ -418,44 +418,44 @@ Knowledge comic creator supporting multiple styles (Logicomix/Ligne Claire, Ohms
 
 #### baoyu-article-illustrator
 
-Smart article illustration skill. Analyzes article content and generates illustrations at positions requiring visual aids.
+智慧文章插圖技能。分析文章內容，在需要視覺輔助的位置生成插圖。
 
 ```bash
-# Auto-select style based on content
+# 根據內容自動選擇風格
 /baoyu-article-illustrator path/to/article.md
 
-# Specify a style
+# 指定風格
 /baoyu-article-illustrator path/to/article.md --style warm
 /baoyu-article-illustrator path/to/article.md --style watercolor
 ```
 
-**Styles** (visual aesthetics):
+**風格**（視覺美學）：
 
-| Style | Description | Best For |
-|-------|-------------|----------|
-| `notion` (default) | Minimalist hand-drawn line art | Knowledge sharing, SaaS, productivity |
-| `elegant` | Refined, sophisticated, professional | Business, thought leadership |
-| `warm` | Friendly, approachable, human-centered | Personal growth, lifestyle |
-| `minimal` | Ultra-clean, zen-like, focused | Philosophy, minimalism |
-| `playful` | Fun, creative, whimsical | Tutorials, beginner guides |
-| `nature` | Organic, calm, earthy | Sustainability, wellness |
-| `sketch` | Raw, authentic, notebook-style | Ideas, brainstorming |
-| `watercolor` | Soft artistic with natural warmth | Lifestyle, travel, creative |
-| `vintage` | Nostalgic aged-paper aesthetic | Historical, biography |
-| `scientific` | Academic precise diagrams | Biology, chemistry, technical |
-| `chalkboard` | Classroom chalk drawing style | Education, tutorials |
-| `editorial` | Magazine-style infographic | Tech explainers, journalism |
-| `flat` | Modern flat vector illustration | Startups, digital |
-| `flat-doodle` | Bold outlines, pastel colors, cute | Productivity, SaaS, workflows |
-| `retro` | 80s/90s vibrant nostalgic | Pop culture, entertainment |
-| `blueprint` | Technical schematics, engineering | Architecture, system design |
-| `vector-illustration` | Flat vector, black outlines, retro | Educational, creative, brand |
-| `sketch-notes` | Soft hand-drawn, warm feel | Knowledge sharing, tutorials |
-| `pixel-art` | Retro 8-bit gaming aesthetic | Gaming, tech, developer |
-| `intuition-machine` | Technical briefing, bilingual | Academic, technical, research |
-| `fantasy-animation` | Ghibli/Disney whimsical style | Storytelling, children's |
+| 風格 | 描述 | 適用場景 |
+|------|------|----------|
+| `notion`（預設） | 極簡手繪線條畫 | 知識分享、SaaS、生產力 |
+| `elegant` | 精緻、優雅、專業 | 商業、思想領導力 |
+| `warm` | 友好、親切、人文關懷 | 個人成長、生活方式 |
+| `minimal` | 極簡、禪意、專注 | 哲學、極簡主義 |
+| `playful` | 有趣、創意、俏皮 | 教程、新手指南 |
+| `nature` | 自然、平靜、質樸 | 可持續發展、健康 |
+| `sketch` | 原始、真實、筆記風格 | 想法、頭腦風暴 |
+| `watercolor` | 柔和藝術感、自然溫暖 | 生活方式、旅行、創意 |
+| `vintage` | 懷舊做舊紙張美學 | 歷史、傳記 |
+| `scientific` | 學術精確圖表 | 生物、化學、技術 |
+| `chalkboard` | 教室粉筆畫風格 | 教育、教程 |
+| `editorial` | 雜誌風格資訊圖 | 科技解說、新聞 |
+| `flat` | 現代扁平向量插畫 | 創業公司、數字化 |
+| `flat-doodle` | 粗輪廓、粉彩色、可愛風 | 生產力、SaaS、工作流 |
+| `retro` | 80/90 年代復古鮮豔 | 流行文化、娛樂 |
+| `blueprint` | 技術藍圖、工程精度 | 架構、系統設計 |
+| `vector-illustration` | 扁平向量、黑色輪廓、復古 | 教育、創意、品牌 |
+| `sketch-notes` | 柔和手繪、溫暖感 | 知識分享、教程 |
+| `pixel-art` | 復古 8-bit 遊戲風格 | 遊戲、技術、開發者 |
+| `intuition-machine` | 技術簡報、雙語標籤 | 學術、技術、研究 |
+| `fantasy-animation` | 吉卜力/迪士尼童話風格 | 故事、兒童、創意 |
 
-**Style Previews**:
+**風格預覽**：
 
 | | | |
 |:---:|:---:|:---:|
@@ -476,24 +476,24 @@ Smart article illustration skill. Analyzes article content and generates illustr
 
 #### baoyu-post-to-x
 
-Post content and articles to X (Twitter). Supports regular posts with images and X Articles (long-form Markdown). Uses real Chrome with CDP to bypass anti-automation.
+釋出內容和文章到 X (Twitter)。支援帶圖片的普通帖子和 X 文章（長篇 Markdown）。使用真實 Chrome + CDP 繞過反自動化檢測。
 
 ```bash
-# Post with text
+# 釋出文字
 /baoyu-post-to-x "Hello from Claude Code!"
 
-# Post with images
-/baoyu-post-to-x "Check this out" --image photo.png
+# 釋出帶圖片
+/baoyu-post-to-x "看看這個" --image photo.png
 
-# Post X Article
+# 釋出 X 文章
 /baoyu-post-to-x --article path/to/article.md
 ```
 
 #### baoyu-post-to-wechat
 
-Post content to WeChat Official Account (微信公眾號). Two modes available:
+釋出內容到微信公眾號，支援兩種模式：
 
-**Image-Text (圖文)** - Multiple images with short title/content:
+**圖文模式** - 多圖配短標題和正文：
 
 ```bash
 /baoyu-post-to-wechat 圖文 --markdown article.md --images ./photos/
@@ -501,7 +501,7 @@ Post content to WeChat Official Account (微信公眾號). Two modes available:
 /baoyu-post-to-wechat 圖文 --title "標題" --content "內容" --image img1.png --submit
 ```
 
-**Article (文章)** - Full markdown/HTML with rich formatting:
+**文章模式** - 完整 markdown/HTML 富文字格式：
 
 ```bash
 /baoyu-post-to-wechat 文章 --markdown article.md
@@ -509,160 +509,160 @@ Post content to WeChat Official Account (微信公眾號). Two modes available:
 /baoyu-post-to-wechat 文章 --html article.html
 ```
 
-Prerequisites: Google Chrome installed. First run requires QR code login (session preserved).
+前置要求：已安裝 Google Chrome，首次執行需掃碼登入（登入狀態會儲存）
 
-### AI Generation Skills
+### AI 生成技能 (AI Generation Skills)
 
-AI-powered generation backends.
+AI 驅動的生成後端。
 
 #### baoyu-image-gen
 
-AI SDK-based image generation using official OpenAI and Google APIs. Supports text-to-image, reference images, aspect ratios, and quality presets.
+基於 AI SDK 的影象生成，使用官方 OpenAI 和 Google API。支援文生圖、參考圖、寬高比和質量預設。
 
 ```bash
-# Basic generation (auto-detect provider)
-/baoyu-image-gen --prompt "A cute cat" --image cat.png
+# 基礎生成（自動檢測服務商）
+/baoyu-image-gen --prompt "一隻可愛的貓" --image cat.png
 
-# With aspect ratio
-/baoyu-image-gen --prompt "A landscape" --image landscape.png --ar 16:9
+# 指定寬高比
+/baoyu-image-gen --prompt "風景圖" --image landscape.png --ar 16:9
 
-# High quality (2k)
-/baoyu-image-gen --prompt "A banner" --image banner.png --quality 2k
+# 高質量（2k 解析度）
+/baoyu-image-gen --prompt "橫幅圖" --image banner.png --quality 2k
 
-# Specific provider
-/baoyu-image-gen --prompt "A cat" --image cat.png --provider openai
+# 指定服務商
+/baoyu-image-gen --prompt "一隻貓" --image cat.png --provider openai
 
-# With reference images (Google multimodal only)
-/baoyu-image-gen --prompt "Make it blue" --image out.png --ref source.png
+# 帶參考圖（僅 Google 多模態支援）
+/baoyu-image-gen --prompt "把它變成藍色" --image out.png --ref source.png
 ```
 
-**Options**:
-| Option | Description |
-|--------|-------------|
-| `--prompt`, `-p` | Prompt text |
-| `--promptfiles` | Read prompt from files (concatenated) |
-| `--image` | Output image path (required) |
-| `--provider` | `google` or `openai` (default: google) |
-| `--model`, `-m` | Model ID |
-| `--ar` | Aspect ratio (e.g., `16:9`, `1:1`, `4:3`) |
-| `--size` | Size (e.g., `1024x1024`) |
-| `--quality` | `normal` or `2k` (default: normal) |
-| `--ref` | Reference images (Google multimodal only) |
+**選項**：
+| 選項 | 說明 |
+|------|------|
+| `--prompt`, `-p` | 提示詞文字 |
+| `--promptfiles` | 從檔案讀取提示詞（多檔案拼接） |
+| `--image` | 輸出圖片路徑（必需） |
+| `--provider` | `google` 或 `openai`（預設：google） |
+| `--model`, `-m` | 模型 ID |
+| `--ar` | 寬高比（如 `16:9`、`1:1`、`4:3`） |
+| `--size` | 尺寸（如 `1024x1024`） |
+| `--quality` | `normal` 或 `2k`（預設：normal） |
+| `--ref` | 參考圖片（僅 Google 多模態支援） |
 
-**Environment Variables** (see [Environment Configuration](#environment-configuration) for setup):
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `OPENAI_API_KEY` | OpenAI API key | - |
-| `GOOGLE_API_KEY` | Google API key | - |
-| `OPENAI_IMAGE_MODEL` | OpenAI model | `gpt-image-1.5` |
-| `GOOGLE_IMAGE_MODEL` | Google model | `gemini-3-pro-image-preview` |
-| `OPENAI_BASE_URL` | Custom OpenAI endpoint | - |
-| `GOOGLE_BASE_URL` | Custom Google endpoint | - |
+**環境變數**（配置方法見[環境配置](#環境配置)）：
+| 變數 | 說明 | 預設值 |
+|------|------|--------|
+| `OPENAI_API_KEY` | OpenAI API 金鑰 | - |
+| `GOOGLE_API_KEY` | Google API 金鑰 | - |
+| `OPENAI_IMAGE_MODEL` | OpenAI 模型 | `gpt-image-1.5` |
+| `GOOGLE_IMAGE_MODEL` | Google 模型 | `gemini-3-pro-image-preview` |
+| `OPENAI_BASE_URL` | 自定義 OpenAI 端點 | - |
+| `GOOGLE_BASE_URL` | 自定義 Google 端點 | - |
 
-**Provider Auto-Selection**:
-1. If `--provider` specified → use it
-2. If only one API key available → use that provider
-3. If both available → default to Google
+**服務商自動選擇**：
+1. 如果指定了 `--provider` → 使用指定的
+2. 如果只有一個 API 金鑰 → 使用對應服務商
+3. 如果兩個都有 → 預設使用 Google
 
 #### baoyu-danger-gemini-web
 
-Interacts with Gemini Web to generate text and images.
+與 Gemini Web 互動，生成文字和圖片。
 
-**Text Generation:**
+**文字生成：**
 
 ```bash
-/baoyu-danger-gemini-web "Hello, Gemini"
-/baoyu-danger-gemini-web --prompt "Explain quantum computing"
+/baoyu-danger-gemini-web "你好，Gemini"
+/baoyu-danger-gemini-web --prompt "解釋量子計算"
 ```
 
-**Image Generation:**
+**圖片生成：**
 
 ```bash
-/baoyu-danger-gemini-web --prompt "A cute cat" --image cat.png
+/baoyu-danger-gemini-web --prompt "一隻可愛的貓" --image cat.png
 /baoyu-danger-gemini-web --promptfiles system.md content.md --image out.png
 ```
 
-### Utility Skills
+### 工具技能 (Utility Skills)
 
-Utility tools for content processing.
+內容處理工具。
 
 #### baoyu-url-to-markdown
 
-Fetch any URL via Chrome CDP and convert to clean markdown. Supports two capture modes for different scenarios.
+透過 Chrome CDP 抓取任意 URL 並轉換為乾淨的 Markdown。支援兩種抓取模式，適應不同場景。
 
 ```bash
-# Auto mode (default) - capture when page loads
+# 自動模式（預設）- 頁面載入後立即抓取
 /baoyu-url-to-markdown https://example.com/article
 
-# Wait mode - for login-required pages
+# 等待模式 - 適用於需要登入的頁面
 /baoyu-url-to-markdown https://example.com/private --wait
 
-# Save to specific file
+# 儲存到指定檔案
 /baoyu-url-to-markdown https://example.com/article -o output.md
 ```
 
-**Capture Modes**:
-| Mode | Description | Best For |
-|------|-------------|----------|
-| Auto (default) | Captures immediately after page load | Public pages, static content |
-| Wait (`--wait`) | Waits for user signal before capture | Login-required, dynamic content |
+**抓取模式**：
+| 模式 | 說明 | 適用場景 |
+|------|------|----------|
+| 自動（預設） | 頁面載入後立即抓取 | 公開頁面、靜態內容 |
+| 等待（`--wait`） | 等待使用者訊號後抓取 | 需登入頁面、動態內容 |
 
-**Options**:
-| Option | Description |
-|--------|-------------|
-| `<url>` | URL to fetch |
-| `-o <path>` | Output file path |
-| `--wait` | Wait for user signal before capturing |
-| `--timeout <ms>` | Page load timeout (default: 30000) |
+**選項**：
+| 選項 | 說明 |
+|------|------|
+| `<url>` | 要抓取的 URL |
+| `-o <path>` | 輸出檔案路徑 |
+| `--wait` | 等待使用者訊號後抓取 |
+| `--timeout <ms>` | 頁面載入超時（預設：30000） |
 
 #### baoyu-danger-x-to-markdown
 
-Converts X (Twitter) content to markdown format. Supports tweet threads and X Articles.
+將 X (Twitter) 內容轉換為 markdown 格式。支援推文串和 X 文章。
 
 ```bash
-# Convert tweet to markdown
+# 將推文轉換為 markdown
 /baoyu-danger-x-to-markdown https://x.com/username/status/123456
 
-# Save to specific file
+# 儲存到指定檔案
 /baoyu-danger-x-to-markdown https://x.com/username/status/123456 -o output.md
 
-# JSON output
+# JSON 輸出
 /baoyu-danger-x-to-markdown https://x.com/username/status/123456 --json
 ```
 
-**Supported URLs:**
+**支援的 URL：**
 - `https://x.com/<user>/status/<id>`
 - `https://twitter.com/<user>/status/<id>`
 - `https://x.com/i/article/<id>`
 
-**Authentication:** Uses environment variables (`X_AUTH_TOKEN`, `X_CT0`) or Chrome login for cookie-based auth.
+**身份驗證：** 使用環境變數（`X_AUTH_TOKEN`、`X_CT0`）或 Chrome 登入進行 cookie 認證。
 
 #### baoyu-compress-image
 
-Compress images to reduce file size while maintaining quality.
+壓縮圖片以減小檔案大小，同時保持質量。
 
 ```bash
 /baoyu-compress-image path/to/image.png
 /baoyu-compress-image path/to/images/ --quality 80
 ```
 
-## Environment Configuration
+## 環境配置
 
-Some skills require API keys or custom configuration. Environment variables can be set in `.env` files:
+部分技能需要 API 金鑰或自定義配置。環境變數可以在 `.env` 檔案中設定：
 
-**Load Priority** (higher priority overrides lower):
-1. CLI environment variables (e.g., `OPENAI_API_KEY=xxx /baoyu-image-gen ...`)
-2. `process.env` (system environment)
-3. `<cwd>/.baoyu-skills/.env` (project-level)
-4. `~/.baoyu-skills/.env` (user-level)
+**載入優先順序**（高優先順序覆蓋低優先順序）：
+1. 命令列環境變數（如 `OPENAI_API_KEY=xxx /baoyu-image-gen ...`）
+2. `process.env`（系統環境變數）
+3. `<cwd>/.baoyu-skills/.env`（專案級）
+4. `~/.baoyu-skills/.env`（使用者級）
 
-**Setup**:
+**配置方法**：
 
 ```bash
-# Create user-level config directory
+# 建立使用者級配置目錄
 mkdir -p ~/.baoyu-skills
 
-# Create .env file
+# 建立 .env 檔案
 cat > ~/.baoyu-skills/.env << 'EOF'
 # OpenAI
 OPENAI_API_KEY=sk-xxx
@@ -676,73 +676,73 @@ GOOGLE_IMAGE_MODEL=gemini-3-pro-image-preview
 EOF
 ```
 
-**Project-level config** (for team sharing):
+**專案級配置**（團隊共享）：
 
 ```bash
 mkdir -p .baoyu-skills
-# Add .baoyu-skills/.env to .gitignore to avoid committing secrets
+# 將 .baoyu-skills/.env 新增到 .gitignore 避擴音交金鑰
 echo ".baoyu-skills/.env" >> .gitignore
 ```
 
-## Customization
+## 自定義擴充套件
 
-All skills support customization via `EXTEND.md` files. Create an extension file to override default styles, add custom configurations, or define your own presets.
+所有技能支援透過 `EXTEND.md` 檔案自定義。建立擴充套件檔案可覆蓋預設樣式、新增自定義配置或定義個人預設。
 
-**Extension paths** (checked in priority order):
-1. `.baoyu-skills/<skill-name>/EXTEND.md` - Project-level (for team/project-specific settings)
-2. `~/.baoyu-skills/<skill-name>/EXTEND.md` - User-level (for personal preferences)
+**擴充套件路徑**（按優先順序檢查）：
+1. `.baoyu-skills/<skill-name>/EXTEND.md` - 專案級（團隊/專案特定設定）
+2. `~/.baoyu-skills/<skill-name>/EXTEND.md` - 使用者級（個人偏好設定）
 
-**Example**: To customize `baoyu-cover-image` with your brand colors:
+**示例**：為 `baoyu-cover-image` 自定義品牌配色：
 
 ```bash
 mkdir -p .baoyu-skills/baoyu-cover-image
 ```
 
-Then create `.baoyu-skills/baoyu-cover-image/EXTEND.md`:
+然後建立 `.baoyu-skills/baoyu-cover-image/EXTEND.md`：
 
 ```markdown
-## Custom Styles
+## 自定義風格
 
 ### brand
-- Primary color: #1a73e8
-- Secondary color: #34a853
-- Font style: Modern sans-serif
-- Always include company logo watermark
+- 主色：#1a73e8
+- 輔色：#34a853
+- 字型風格：現代無襯線
+- 始終包含公司 logo 水印
 ```
 
-The extension content will be loaded before skill execution and override defaults.
+擴充套件內容會在技能執行前載入，並覆蓋預設設定。
 
-## Disclaimer
+## 免責宣告
 
 ### baoyu-danger-gemini-web
 
-This skill uses the Gemini Web API (reverse-engineered).
+此技能使用 Gemini Web API（逆向工程）。
 
-**Warning:** This project uses unofficial API access via browser cookies. Use at your own risk.
+**警告：** 本專案透過瀏覽器 cookies 使用非官方 API。使用風險自負。
 
-- First run opens a browser to authenticate with Google
-- Cookies are cached for subsequent runs
-- No guarantees on API stability or availability
+- 首次執行會開啟瀏覽器進行 Google 身份驗證
+- Cookies 會被快取供後續使用
+- 不保證 API 的穩定性或可用性
 
-**Supported browsers** (auto-detected): Google Chrome, Chrome Canary/Beta, Chromium, Microsoft Edge
+**支援的瀏覽器**（自動檢測）：Google Chrome、Chrome Canary/Beta、Chromium、Microsoft Edge
 
-**Proxy configuration**: If you need a proxy to access Google services (e.g., in China), set environment variables inline:
+**代理配置**：如果需要透過代理訪問 Google 服務（如中國大陸使用者），請在命令前設定環境變數：
 
 ```bash
-HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 /baoyu-danger-gemini-web "Hello"
+HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 /baoyu-danger-gemini-web "你好"
 ```
 
 ### baoyu-danger-x-to-markdown
 
-This skill uses a reverse-engineered X (Twitter) API.
+此技能使用逆向工程的 X (Twitter) API。
 
-**Warning:** This is NOT an official API. Use at your own risk.
+**警告：** 這不是官方 API。使用風險自負。
 
-- May break without notice if X changes their API
-- Account restrictions possible if API usage detected
-- First use requires consent acknowledgment
-- Authentication via environment variables or Chrome login
+- 如果 X 更改其 API，可能會無預警失效
+- 如檢測到 API 使用，賬號可能受限
+- 首次使用需確認免責宣告
+- 透過環境變數或 Chrome 登入進行身份驗證
 
-## License
+## 許可證
 
 MIT
