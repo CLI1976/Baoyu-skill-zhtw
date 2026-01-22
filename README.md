@@ -48,7 +48,7 @@ npx skills add CLI1976/Baoyu-skill-zhtw
 
 直接告訴 Claude Code：
 
-> 請幫我安裝 github.com/JimLiu/baoyu-skills 中的 Skills
+> 請幫我安裝 github.com/CLI1976/Baoyu-skill-zhtw 中的 Skills
 
 ### 可用外掛
 
